@@ -372,6 +372,7 @@ h1{
 		function startpage(){
 			for (var j=0; j<topmenu.length; j++){
 				topmenu[j].onclick = function(){
+					autoscrollstop();
 					for (var k=0; k<topmenu.length; k++){
 						if (topmenu[k].classList.contains("active"))
 							topmenu[k].classList.remove("active");
