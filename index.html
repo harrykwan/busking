@@ -1,130 +1,779 @@
-[Chorus]
-                       F                       C
-Well you only need the light when it's burning low
-              G                       Am
-Only miss the sun when it starts to snow
-               F                           C       G
-Only know you love her when you let her go
-                      F                        C
-Only know you've been high when you're feeling low
-              G                        Am
-Only hate the road when you're missin  home
-               F                         C
-Only know you love her when you've let her go
-G
-  And you let her go
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body{
+	background-color: black;
+	font-family: 'Righteous', cursive;
+	color: white;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
 
-[Instrumental]
-Am   F   G   Em
-Am   F   G
+li {
+    float: left;
+    font-size: 20px;
+}
 
-[Verse 1]
-Am                            F
-Staring at the bottom of your glass
-        G                            Em
-Hoping one day you will make a dream last
-               Am               F          G
-The dreams come slow and they go so fast
-    Am                          F
-You see her when you close your eyes
-      G                           Em
-Maybe one day you will understand why
-               Am           F         G
-Everything you touch surely dies
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
 
-[Chorus]
-                      F                       C
-But you only need the light when it's burning low
-              G                       Am
-Only miss the sun when it starts to snow
-               F                           C       G
-Only know you love her when you let her go
-                      F                        C
-Only know you've been high when you're feeling low
-              G                        Am
-Only hate the road when you're missin  home
-               F                         C       G
-Only know you love her when you've let her go
+li a:hover:not(.active) {
+    background-color: #111;
+}
 
-[Verse 2]
-Am                            F
-Staring at the ceiling in the dark
-         G                     Em
-Same old empty feeling in your heart
-           Am                 F       G
-Love comes slow and it goes so fast
-         Am                      F
-Well you see her when you fall asleep
-                G                  Em
-But to never to touch and never to keep
-                          Am
-Because you loved her too much
-                  F          G
-And you dived too deep
+.active {
+    background-color: #F88220;
+    color: black;
+    box-shadow: 5px 5px;
+}
 
-[Chorus]
-                       F                       C
-Well you only need the light when it's burning low
-              G                       Am
-Only miss the sun when it starts to snow
-               F                           C       G
-Only know you love her when you let her go
-                      F                        C
-Only know you've been high when you're feeling low
-              G                         Am
-Only hate the road when you're missin'  home
-               F                         C         G
-Only know you love her when you've let her go
+.mybox{
+	font-size: 18px;
+	background-color: #EEEEE0;
+	/*background-color: #333333;*/
+	color: black;
+	/*color: white;*/
+	box-shadow: 5px 5px ;
+	margin: 0px 20%;
+	/*border: 5px solid #F88220;*/
+	/*opacity: 0.9;*/
+	/*background-color: #EEAA77;*/
+}
 
-[Bridge]
-                Am
-And you let her go
-      F     G
-Ooooo ooooo oooooo
-                Am
-And you let her go
-        F     G
-Ooooooo ooooo ooooo
-                Am         F    G   Em
-And you let her go
+.mybox1{
+	margin-top: 25px;
+	/*background-color: #EEAA77;*/
+	/*background-color: #F88220;*/
+	margin-bottom: 0px;
+	/*background-color: #3E2723;*/
+	/*background-color: #5D4037;*/
+	/*background-color: #4a2709;*/
+	background-color: black;
+	/*padding: 20px;*/
+}
 
-[Interlude]
-Am    F    G
+.mybox2{
+	margin-bottom: 25px;
+	text-align: center;
+	padding-top: 2px;
+	padding-bottom: 30px;
+}
 
-[Chorus]
-                          F                       C
-Because you only need the light when it's burning low
-              G                       Am
-Only miss the sun when it starts to snow
-               F                           C       G
-Only know you love her when you let her go
-                      F                        C
-Only know you've been high when you're feeling low
-              G                         Am
-Only hate the road when you're missin'  home
-               F                         C
-Only know you love her when you've let her go
+.mybox>img{
+	width: 100%;
+	/*border-radius: 5px;*/
+	/*box-shadow: 4px 4px #333;*/
+}
 
-[Chorus]
-                          F                     C
-Because you only need the light when it burning low
-              G                       Am
-Only miss the sun when it starts to snow
-               F                           C       G
-Only know you love her when you let her go
-N.C.
-Only know you've been high when you're feeling low
+h1{
+	font-size: 35px;
+}
 
-Only hate the road when you're missin  home
+.contentarea{
+	/*background-color: #4E342E;*/
+	/*background-color: #333;*/
+	background-color: #222;
+	padding: 50px;
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
 
-Only know you love her when you've let her go
+.medialist{
+	font-size: 25px;
+}
 
-And you let her go
+.medialist>a{
+	color: black;
+}
+
+.medialist>a:hover{
+	color: #944e13;
+}
+
+.profile{
+	transition: 0.5s;
+	/*padding-top: 10px;*/
+	padding-bottom: 10px;
+}
+
+.profile:hover{
+	/*border: 3px solid #F88220;*/
+	background-color: #F88220;
+	/*opacity: 0.8;*/
+	padding-top: 10px;
+	padding-bottom: 10px;
+	box-shadow: 5px 5px black;
+	/*border: 5px solid black;*/
+	transition: 0.5s;
+}
+
+#keybar>button{
+	/*background-color: #222222;*/
+	/*color: white;*/
+	font-size: 15px;
+	outline: none;
+	margin-right: 10px;
+	padding: 5px;
+	/*font-family: 'Righteous', cursive;*/
+}
+
+#keybar>button:hover{
+	background-color: #F88220;
+	/*background-color: grey;*/
+	box-shadow: 5px 5px black;
+}
+
+.keybarselect{
+	background-color: #F88220;
+	box-shadow: 5px 5px black;
+	color: #301000;
+	font-weight: bold;
+	border: none;
+}
+
+.keybarnormal{
+	background-color: #222222;
+	color: white;
+	border: none;
+}
+
+.originalkey{
+	border: 2px solid #F88220;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+#keybar>span{
+	margin-right: 10px;
+
+}
+
+.editorarea{
+	background-color: #111111;
+	resize: none;
+	color: white;
+	outline: none;
+	font-size: 15px;
+	width: 100%;
+	padding: 20px;
+	box-shadow: 5px 5px black;
+	border: 3px solid #F88220;
+	border-color: grey;
+	border-color: #F88220;
+}
+
+.editorarea:hover{
+	border-color: #F88220;
+}
+
+.lockbutton{
+	border: 3px solid #F88220;
+	background: #111111;
+	color: white;
+	color: #BBBBBB;
+	font-size: 15px;
+	margin-top: 10px;
+	padding: 8px;
+	padding-left: 20px;
+	padding-right: 20px;
+	/*width: 100%;*/
+	outline: none;
+	font-family: 'Righteous', cursive;
+	box-shadow: 5px 5px black;
+	border-color: grey;
+	border-color: #F88220;
+}
+
+.lockbutton:hover{
+	background-color: black;
+	border-color: #F88220;
+}
+
+.chorddiv{
+	background-color: #333333;
+	padding: 5px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.nonchorddiv{
+	padding: 5px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.scrollbutton{
+	position: fixed; 
+	top:100px;
+	right: 120px; 
+	border: 2px solid #F88220; 
+	border:none; 
+	background: none; 
+	/*color: #EEEEEE; */
+	color: grey;
+	opacity: 0.9;
+	padding: 5px; 
+	font-size: 35px; 
+	border-radius: 10px; 
+	outline: none;
+}
+
+.scrollbutton:hover{
+	color: #F88220;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  /*background-color: #f9f9f9;*/
+  background: #333333;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  font-size: 16px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.speedbutton{
+	background: none;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	outline: none;
+	border: none;
+}
+
+.speedbutton:hover{
+	color: #F88220;
+}
+
+</style>
+</head>
+<body>
+<div id="menuarea" style="">
+<ul id="topmenu">
+  <li><a class="active" href="#hkbusker">HK Buskers</a></li>
+  <li><a href="#findbusker">Find Buskmates</a></li>
+  <li><a href="#chordeditor">Chord Editor</a></li>
+  <li style="float:right"><a href="#contactus">Contact Us</a></li>
+  <!-- <li style="float:right"><a href="#about">About</a></li> -->
+</ul>
+</div>
+
+<div id="contentarea_0" class="contentarea" style="">
+
+	<div class="profile">
+	 <div class="mybox mybox1">
+	 	<img src="demoprofile.jpg">
+	 </div>
+	 <div class="mybox mybox2">
+	 	 <h1>KCL MUSIC</h1>
+		 <div class="medialist">
+		 	<a href="#"><i class="fa fa-facebook"></i></a> 
+		    <a href="#"><i class="fa fa-youtube"></i></a> 
+		    <a href="#"><i class="fa fa-instagram"></i></a> 
+		 </div>
+	 </div>
+	</div>
+
+	<div class="profile">
+	 <div class="mybox mybox1">
+	 	<img src="demoprofile2.jpg">
+	 </div>
+	 <div class="mybox mybox2">
+	 	<h1>RED HOUSE</h1>
+		 <div class="medialist">
+		 	<a href="#"><i class="fa fa-facebook"></i></a> 
+		    <a href="#"><i class="fa fa-youtube"></i></a> 
+		    <a href="#"><i class="fa fa-instagram"></i></a> 
+		 </div>
+	 </div>
+	</div>
+
+</div>
+
+<div id="contentarea_1" class="contentarea" style="" hidden>
+</div>
+
+<div id="contentarea_2" class="contentarea" style="" hidden>
+	<span style="font-size: 18px;">KEY</span><br><br>
+	<div id="keybar">
+		<!-- <span>KEY</span> -->
+		<button>C</button>
+		<button>Db</button>
+		<button>D</button>
+		<button>Eb</button>
+		<button>E</button>
+		<button>F</button>
+		<button>F#</button>
+		<button>G</button>
+		<button>Ab</button>
+		<button>A</button>
+		<button>Bb</button>
+		<button>B</button>
+	</div>
+	<br>
+	<br>
+
+		<textarea id="mytext" rows="50" cols="100" class="editorarea" placeholder="Paste the chord sheet here"></textarea>
+		<div id="showchordarea"></div>
+		<button onclick="chorddone(this)" class="lockbutton">LOCK</button>
+		<div  class="scrollbutton" style="">
+			<div class="dropdown">
+			  <span onclick="autoscrollstart()" id="scrollbuttoncontent">&#10162;</span>
+			  <div class="dropdown-content">
+			  	<div style="color: grey;">Delay Time</div>
+			  	<button onclick="incspeed()" class="speedbutton" style="margin-left: 5px;">+</button>
+			  	<span id="scrollspeedshow">100</span>
+			  	<button onclick="decspeed()" class="speedbutton" style="font-size: 25px;">-</button>
+			  </div>
+			</div>
+		</div>
+		<!-- &#9881; -->
+		<!-- &#10162; -->
+		<!-- &#10050; -->
+</div>
+
+<div id="contentarea_3" class="contentarea" style="" hidden>
+</div>
 
 
-***********************************
+<script type="text/javascript">
+	var topmenu = document.getElementById("topmenu").getElementsByTagName("a");
+	var mykeybar = document.getElementById("keybar").getElementsByTagName('button');
 
-| h   Hammer-on
-| p   Pull-off
+	$(document).ready(function(){
+		function startpage(){
+			for (var j=0; j<topmenu.length; j++){
+				topmenu[j].onclick = function(){
+					for (var k=0; k<topmenu.length; k++){
+						if (topmenu[k].classList.contains("active"))
+							topmenu[k].classList.remove("active");
+					}
+					this.classList.add("active");
+				
+					for (var k=0; k<topmenu.length; k++){
+						if (document.getElementById('contentarea_'+k)){
+							if (topmenu[k].innerHTML==this.innerHTML)
+								document.getElementById('contentarea_'+k).hidden = false;
+							else
+								document.getElementById('contentarea_'+k).hidden = true;
+						}
+					}
+				}
+			}
+			
+			for (var j=0; j<mykeybar.length; j++){
+				mykeybar[j].classList.add('keybarnormal');
+				// mykeybar[j].classList.add('originalkey');
+				mykeybar[j].onclick = function(){
+					for (var k=0; k<mykeybar.length; k++){
+						mykeybar[k].classList.add('keybarnormal');
+						mykeybar[k].classList.remove('keybarselect');
+					}
+					choosekey(this);
+				}
+			}
 
-***********************************
+			if (getCookie('editorarea')!='')
+				document.getElementById("mytext").value = getCookie('editorarea').split("|n").join("\n");
+
+		}
+		startpage();
+	});
+
+	var notes = ['C','D','E','F','G','A','B'];
+	var numberlist = '0123456789';
+	var letterlist = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
+	function checkifchord(x){
+		if (x=='')
+			return 0;
+		for (var j=0; j<x.length; j++){
+			if (j!=0&&x[j]=='m'){
+				if (j+2<x.length)
+					if (x[j+1]=='a'&&x[j+2]=='j')
+						j=j+2;
+			} else if (j!=0&&x[j]=='s'){
+				if (j+2<x.length){
+					if (x[j+1]=='u'&&x[j+2]=='s')
+						j=j+2;
+					else
+						return -1;
+				} else 
+					return -1;
+			} else if (j!=0&&x[j]=='d'){
+				if (j+2<x.length){
+					if (x[j+1]=='i'&&x[j+2]=='m')
+						j=j+2;
+					else
+						return -1;
+				} else 
+					return -1;
+			} else if (j==0&&notes.includes(x[j])){
+				//ok
+			} else if (j!=0&&x[j]=='b'||j!=0&&x[j]=='#'||j!=0&&numberlist.indexOf(x[j])!==-1){
+				//ok
+			} else {
+				return -1;
+			}
+		}
+		return 1;
+	}
+
+	function rowtochord(x){
+		var temp = x;
+		for (var j=0; j<temp.length; j++){
+			if (numberlist.indexOf(temp[j])==-1&&letterlist.indexOf(temp[j])==-1&&temp[j]!='#'&&temp[j]!=' '){
+				// console.log(j+' '+temp[j])
+				temp = temp.replace(x[j],' ');
+			}
+		}
+		return temp.split(' ');
+	}
+
+	function checkchordrow(x){
+		
+		var myscore = 0;
+		var myrow = rowtochord(x);
+		for (var j=0; j<myrow.length; j++){
+			// console.log(myrow[j]+' '+checkifchord(myrow[j]));
+			myscore += checkifchord(myrow[j]);
+		}
+		// console.log(myscore);
+		if (myscore>0){
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+
+	function choosekey(x){
+		// console.log(notestolocation(x.innerHTML)-nowkey);
+		
+		if (nowkey!=-1){
+			x.classList.remove('keybarnormal');
+			x.classList.add('keybarselect');
+			if (notestolocation(x.innerHTML)-nowkey!=0){
+				var myallchord = document.getElementsByClassName("chorddiv");
+				for (var j=0; j<myallchord.length; j++){
+					var mychordrow = rowtochord(myallchord[j].innerHTML);
+					var nowindex = 0;
+					var firstplace = [];
+					var secondplace = [];
+					// console.log(mychordrow);
+					// console.log(myallchord[j].innerHTML.length);
+					for (var k=0; k<mychordrow.length; k++){
+						if (mychordrow[k]!=''){
+							mychordrow[k]=mychordrow[k].replace('m','');
+							// console.log(k+' '+mychordrow[k]);
+							if (mychordrow[k].indexOf('b')!=-1){
+								firstplace[k]=myallchord[j].innerHTML.indexOf(mychordrow[k][0],nowindex);
+								nowindex = firstplace[k]+1;
+								secondplace[k]=myallchord[j].innerHTML.indexOf('b',nowindex);
+								nowindex = secondplace[k]+1;
+							} else if (mychordrow[k].indexOf('#')!=-1){
+								firstplace[k]=myallchord[j].innerHTML.indexOf(mychordrow[k][0],nowindex);
+								nowindex = firstplace[k]+1;
+								secondplace[k]=myallchord[j].innerHTML.indexOf('#',nowindex);
+								nowindex = secondplace[k]+1;
+							} else {
+								firstplace[k]=myallchord[j].innerHTML.indexOf(mychordrow[k][0],nowindex);
+								secondplace[k]=firstplace[k];
+								nowindex = secondplace[k]+1;
+							}
+						}
+						
+					}
+					// console.log(firstplace);
+					// console.log(secondplace);
+					var tempans = '';
+					nowindex = 0;
+					for (var k=0; k<mychordrow.length; k++){
+						if (mychordrow[k]!=''){
+							var newchord;
+
+							if (firstplace[k]==secondplace[k]){
+								newchord = locationtonotes((notestolocation(x.innerHTML)-nowkey+notestolocation(myallchord[j].innerHTML[firstplace[k]])+12)%12);
+								tempans+=myallchord[j].innerHTML.substring(nowindex,firstplace[k])+newchord;
+								nowindex = firstplace[k]+1;
+							} else {
+								newchord = locationtonotes((notestolocation(x.innerHTML)-nowkey+notestolocation(myallchord[j].innerHTML[firstplace[k]]+myallchord[j].innerHTML[secondplace[k]])+12)%12);
+								// console.log(myallchord[j].innerHTML[firstplace[k]]+myallchord[j].innerHTML[secondplace[k]]+' '+newchord);
+								tempans+=myallchord[j].innerHTML.substring(nowindex,firstplace[k])+newchord[0];
+								nowindex = firstplace[k]+1;
+								if (newchord[1])
+									tempans+=myallchord[j].innerHTML.substring(nowindex,secondplace[k])+newchord[1];
+								else
+									tempans+=myallchord[j].innerHTML.substring(nowindex,secondplace[k]);
+								nowindex = secondplace[k]+1;
+							}
+						}
+
+					}
+					myallchord[j].innerHTML = tempans+myallchord[j].innerHTML.substring(nowindex);
+				}
+				nowkey = notestolocation(x.innerHTML);
+			}
+			
+		}
+
+	}
+
+	function notestolocation(x) {
+		if (x=='C'||x=='B#')
+			return 0;
+		else if (x=='C#'||x=="Db")
+			return 1;
+		else if (x=='D')
+			return 2;
+		else if (x=='D#'||x=='Eb')
+			return 3;
+		else if (x=='E'||x=='Fb')
+			return 4;
+		else if (x=='F'||x=='E#')
+			return 5;
+		else if (x=='F#'||x=='Gb')
+			return 6;
+		else if (x=='G')
+			return 7;
+		else if (x=='G#'||x=='Ab')
+			return 8;
+		else if (x=='A')
+			return 9;
+		else if (x=='A#'||x=='Bb')
+			return 10;
+		else if (x=='B'||x=='Cb')
+			return 11;
+	}
+
+	function locationtonotes(x) {
+		var notes = ['C','Db','D','Eb','E','F','F#','G','Ab','A','Bb','B'];
+		return notes[x];
+	}
+
+
+	var nowkey = -1;
+	function findkey(x){
+		var majchordct = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+		var minchordct = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+		for (var j=0; j<x.length; j++){
+			var tempchord = x[j];
+			tempchord = tempchord.replace('maj','');
+			tempchord = tempchord.replace('dim','');
+			tempchord = tempchord.replace('sus','');
+			var finalchord = tempchord[0];
+			if (tempchord.indexOf("#")!=-1)
+				finalchord += '#';
+			else if (tempchord.indexOf("b")!=-1)
+				finalchord += 'b';
+			if (tempchord.indexOf('m')!=-1){
+				minchordct[notestolocation(finalchord)]++;
+			} else {
+				majchordct[notestolocation(finalchord)]++;
+			}
+			// console.log(tempchord+' '+finalchord+' '+notestolocation(tempchord));
+			
+		}
+
+		var detectkey = 0;
+		var minchord = 0;
+		var maxscore = 0;
+		for (var j=0; j<=11; j++){
+			var tempscore = 0;
+			tempscore += majchordct[j] + majchordct[(j+5)%12] + majchordct[(j+7)%12]; //+ majchordct[(j+11)%12];
+			tempscore += minchordct[(j+2)%12] + minchordct[(j+4)%12] + minchordct[(j+9)%12];
+			if (tempscore>maxscore){
+				maxscore = tempscore;
+				detectkey = j;
+				minchord = 0;
+			}
+			var tempscore2 = 0;
+			tempscore2 += majchordct[(j+4)%12] + majchordct[(j+8)%12] + majchordct[(j+10)%12]; //+ majchordct[(j+2)%12];
+			tempscore2 += minchordct[j] + minchordct[(j+5)%12] + minchordct[(j+7)%12];
+			// if (tempscore2>maxscore){
+			// 	maxscore = tempscore2;
+			// 	detectkey = j;
+			// 	minchord = 1;
+			// }
+			// console.log(j+' '+tempscore);
+			// console.log(j+'m '+tempscore2)
+		}
+		// console.log(detectkey+' '+minchord);
+		nowkey = detectkey;
+		mykeybar[detectkey].click();
+		return detectkey;
+	}	
+
+	var originalkey;
+	function chorddone(x){
+		if (x.innerHTML=="LOCK"){
+			x.innerHTML = "UNLOCK";
+			var mytext = document.getElementById("mytext").value.split('\n');
+			var myoutput = document.getElementById("showchordarea");
+			myoutput.innerHTML = '';
+			var mychordlist = [];
+			for (var j=0; j<mytext.length; j++){
+				// console.log(mytext[j]);
+				var mybackgroundcolor = 'class="nonchorddiv"';
+				if (checkchordrow(mytext[j])){
+					//console.log(mytext[j]);
+					// mybackgroundcolor = ' style="background-color: #333333;" ';
+					mybackgroundcolor='class="chorddiv"';
+					var tempchordrow = rowtochord(mytext[j]);
+					for (var k=0; k<tempchordrow.length; k++){
+						if (checkifchord(tempchordrow[k])){
+							mychordlist[mychordlist.length] = tempchordrow[k];
+						}
+					}
+					
+				}
+				myoutput.innerHTML+='<pre '+mybackgroundcolor+' style="margin-top: 4px;">'+mytext[j]+'</pre>';
+				if (mytext[j]=='')
+					myoutput.innerHTML+='<br>';
+			}
+			myoutput.innerHTML+='<br><br>';
+			document.getElementById("mytext").hidden = true;
+			originalkey = findkey(mychordlist);
+			for (var j=0; j<mykeybar.length; j++){
+				if (mykeybar[j].classList.contains('originalkey'))
+					mykeybar[j].classList.remove('originalkey');
+			}
+			mykeybar[originalkey].classList.add('originalkey');
+			// document.cookie = 'editorarea='+document.getElementById("mytext").value;
+			// console.log(document.getElementById("mytext").value);
+			setCookie('editorarea',document.getElementById("mytext").value.split("\n").join("|n"),300);
+		} else {
+			x.innerHTML = "LOCK";
+			document.getElementById("mytext").hidden = false;
+			document.getElementById("showchordarea").innerHTML = '';
+			nowkey=-1;
+		}
+	}
+
+	function getCookie(cname) {
+	  var name = cname + "=";
+	  var decodedCookie = decodeURIComponent(document.cookie);
+	  var ca = decodedCookie.split(';');
+	  for(var i = 0; i <ca.length; i++) {
+	    var c = ca[i];
+	    while (c.charAt(0) == ' ') {
+	      c = c.substring(1);
+	    }
+	    if (c.indexOf(name) == 0) {
+	      return c.substring(name.length, c.length);
+	    }
+	  }
+	  return "";
+	}
+	
+	function setCookie(cname, cvalue, exdays) {
+	  var d = new Date();
+	  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+	  var expires = "expires="+d.toUTCString();
+	  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	  // console.log(cvalue);
+	  // console.log(cvalue.length);
+	  // console.log(document.cookie);
+	}
+
+	function showchordonly(){
+		var myallchordtag = document.getElementsByClassName("chorddiv");
+		for (var j=0; j<myallchordtag.length; j++){
+			myallchordtag[j].hidden = false;
+		}
+		var myallnonchordtag = document.getElementsByClassName("nonchorddiv");
+		for (var j=0; j<myallnonchordtag.length; j++){
+			myallnonchordtag[j].hidden = true;
+		}
+	}
+
+	function showlyriconly(){
+		var myallchordtag = document.getElementsByClassName("chorddiv");
+		for (var j=0; j<myallchordtag.length; j++){
+			myallchordtag[j].hidden = true;
+		}
+		var myallnonchordtag = document.getElementsByClassName("nonchorddiv");
+		for (var j=0; j<myallnonchordtag.length; j++){
+			myallnonchordtag[j].hidden = false;
+		}
+	}
+
+	function showchordandlyric(){
+		var myallchordtag = document.getElementsByClassName("chorddiv");
+		for (var j=0; j<myallchordtag.length; j++){
+			myallchordtag[j].hidden = false;
+		}
+		var myallnonchordtag = document.getElementsByClassName("nonchorddiv");
+		for (var j=0; j<myallnonchordtag.length; j++){
+			myallnonchordtag[j].hidden = false;
+		}
+	}
+
+	var myautoscroll;
+	function autoscrollstart(){
+		if (myautoscroll){
+			autoscrollstop();
+		} else {
+			// console.log('start');
+			myautoscroll = setInterval(function(){
+				window.scrollBy(0,1);
+			},parseInt(document.getElementById("scrollspeedshow").innerHTML));
+			document.getElementById("scrollbuttoncontent").innerHTML = '&#9744;';
+		}
+		
+	}
+
+	function autoscrollstop(){
+		// console.log('stop');
+		clearInterval(myautoscroll);
+		myautoscroll = undefined;
+		document.getElementById("scrollbuttoncontent").innerHTML = "&#10162;";
+	}
+
+	function incspeed(){
+		document.getElementById("scrollspeedshow").innerHTML = parseInt(document.getElementById("scrollspeedshow").innerHTML)+10;
+		if (myautoscroll){
+			autoscrollstop();
+			autoscrollstart();
+		}
+	}
+
+	function decspeed(){
+		if (parseInt(document.getElementById("scrollspeedshow").innerHTML)-10>0){
+			document.getElementById("scrollspeedshow").innerHTML = parseInt(document.getElementById("scrollspeedshow").innerHTML)-10;
+			if (myautoscroll){
+				autoscrollstop();
+				autoscrollstart();
+			}
+		}
+	}
+
+</script>
+</body>
+</html>
