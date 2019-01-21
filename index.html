@@ -369,6 +369,9 @@ h1{
 	var mykeybar = document.getElementById("keybar").getElementsByTagName('button');
 
 	$(document).ready(function(){
+
+		// console.log(location.href.split('#')[1]);
+
 		function startpage(){
 			for (var j=0; j<topmenu.length; j++){
 				topmenu[j].onclick = function(){
@@ -389,6 +392,16 @@ h1{
 					}
 				}
 			}
+
+			if (location.href.split('#')[1]){
+				for (var j=0; j<topmenu.length; j++){
+					if (topmenu[j].href.split('#')[1]==location.href.split('#')[1]){
+						topmenu[j].click();
+					}
+				}
+			}
+			
+
 			
 			for (var j=0; j<mykeybar.length; j++){
 				mykeybar[j].classList.add('keybarnormal');
