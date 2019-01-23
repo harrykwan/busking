@@ -5,6 +5,14 @@
 	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+	 <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+   integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+   crossorigin=""></script>
+
 <style>
 body{
 	background-color: black;
@@ -279,9 +287,10 @@ h1{
 <div id="menuarea" style="">
 <ul id="topmenu">
   <li><a class="active" href="#hkbusker">HK Buskers</a></li>
+  <li><a href="#map">Map</a></li>
   <li><a href="#findbusker">Find Buskmates</a></li>
   <li><a href="#chordeditor">Chord Editor</a></li>
-  <li style="float:right"><a href="#contactus">Contact Us</a></li>
+  <li style="float:right"><a href="#login">Login</a></li>
   <!-- <li style="float:right"><a href="#about">About</a></li> -->
 </ul>
 </div>
@@ -319,9 +328,24 @@ h1{
 </div>
 
 <div id="contentarea_1" class="contentarea" style="" hidden>
+<!-- <div class="mapouter">
+	<div class="gmap_canvas">
+		<iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+		<a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div><style>.mapouter{text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style>
+	</div>
+	
+</div>
+ -->
+ <div id="mapid" style="height: 500px; width: 100%;"></div>
 </div>
 
 <div id="contentarea_2" class="contentarea" style="" hidden>
+	<span style="color: grey;">Coming Soon...</span>
+</div>
+
+
+
+<div id="contentarea_3" class="contentarea" style="" hidden>
 	<span style="font-size: 18px;">KEY</span><br><br>
 	<div id="keybar">
 		<!-- <span>KEY</span> -->
@@ -360,13 +384,14 @@ h1{
 		<!-- &#10050; -->
 </div>
 
-<div id="contentarea_3" class="contentarea" style="" hidden>
+<div id="contentarea_4" class="contentarea" style="" hidden>
 </div>
 
 
 <script type="text/javascript">
 	var topmenu = document.getElementById("topmenu").getElementsByTagName("a");
 	var mykeybar = document.getElementById("keybar").getElementsByTagName('button');
+	var map;
 
 	$(document).ready(function(){
 
@@ -381,7 +406,7 @@ h1{
 							topmenu[k].classList.remove("active");
 					}
 					this.classList.add("active");
-				
+
 					for (var k=0; k<topmenu.length; k++){
 						if (document.getElementById('contentarea_'+k)){
 							if (topmenu[k].innerHTML==this.innerHTML)
@@ -389,6 +414,10 @@ h1{
 							else
 								document.getElementById('contentarea_'+k).hidden = true;
 						}
+					}
+
+					if (this.innerHTML=="Map"){
+						// navigator.geolocation.getCurrentPosition(initlocation);
 					}
 				}
 			}
@@ -418,9 +447,37 @@ h1{
 			if (getCookie('editorarea')!='')
 				document.getElementById("mytext").value = getCookie('editorarea').split("|n").join("\n");
 
+			map = L.map('mapid').setView([22.28552, 114.15769], 11);
+
+			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+			}).addTo(map);
+
+			L.marker([22.300721, 114.189078]).addTo(map)
+			    .bindPopup('<a>KCL MUSIC</a>')
+			    // .openPopup();
+
+			L.marker([22.29408, 114.168667]).addTo(map)
+			    .bindPopup('<a>RED HOUSE</a>')
+			    // .openPopup();
+
+			function onMapClick(e) {
+			   console.log("You clicked the map at " + e.latlng);
+			}
+
+			map.on('click', onMapClick);
+
+
+			
+
 		}
 		startpage();
 	});
+
+
+	function initlocation(x){
+		map.setView([x.coords.latitude, x.coords.longitude], 16);
+	}
 
 	var notes = ['C','D','E','F','G','A','B'];
 	var numberlist = '0123456789';
