@@ -392,10 +392,13 @@ h1{
 	var topmenu = document.getElementById("topmenu").getElementsByTagName("a");
 	var mykeybar = document.getElementById("keybar").getElementsByTagName('button');
 	var map;
+	var mapcheck = 0;
 
 	$(document).ready(function(){
 
 		// console.log(location.href.split('#')[1]);
+		
+		mapcheck = location.href.split('#')[1];
 
 		function startpage(){
 			for (var j=0; j<topmenu.length; j++){
@@ -418,6 +421,9 @@ h1{
 
 					if (this.innerHTML=="Map"){
 						// navigator.geolocation.getCurrentPosition(initlocation);
+						if (mapcheck!='map'){
+							location.reload();
+						}
 					}
 				}
 			}
