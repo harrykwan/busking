@@ -296,6 +296,9 @@ h1{
 </div>
 
 <div id="contentarea_0" class="contentarea" style="">
+	<button onclick="resizeprofile(0)">small</button>
+	<button onclick="location.reload()">middle</button>
+	<button onclick="resizeprofile(1)">big</button>
 
 	<div class="profile">
 	 <div class="mybox mybox1">
@@ -324,6 +327,7 @@ h1{
 		 </div>
 	 </div>
 	</div>
+
 
 </div>
 
@@ -422,7 +426,8 @@ h1{
 					if (this.innerHTML=="Map"){
 						// navigator.geolocation.getCurrentPosition(initlocation);
 						if (mapcheck!='map'){
-							location.reload();
+							location.reload(true);
+							// location.href.replace = "#map";
 						}
 					}
 				}
@@ -850,6 +855,50 @@ h1{
 			}
 		}
 	}
+
+	
+	function resizeprofile(x) {
+		if (x==0){
+			var p1 = '13px';
+			var p2 = '110px';
+			var p3 = '80px';
+			var p4 = '10px';
+		} else if (x==1){
+			var p1 = '35px';
+			var p2 = '100%';
+			var p3 = '100%';
+			var p4 = '30px';
+		}
+		var alltitle = document.getElementsByTagName('h1')
+		for (var j=0; j<alltitle.length; j++){
+		    alltitle[j].style.fontSize=p1;
+		}
+		var allprofile = document.getElementsByClassName('profile');
+		for (var j=0; j<allprofile.length; j++){
+		    allprofile[j].style.width=p2;
+		    allprofile[j].style.margin = "10px";
+		}
+		for (var j=0; j<allprofile.length; j++){
+		    allprofile[j].style.display="inline-block";
+		}
+		var allimgdiv = document.getElementsByClassName('mybox1');
+		for (var j=0; j<allimgdiv.length; j++){
+			allimgdiv[j].style.height = p3;
+			allimgdiv[j].style.overflow = "hidden";
+		}
+
+		var allboxdiv = document.getElementsByClassName('mybox')
+		for (var j=0; j<allboxdiv.length; j++){
+			allboxdiv[j].style.margin = '0px';
+		}
+
+		document.getElementById('contentarea_0').style.padding = p4;
+	}
+
+
+
+
+
 
 </script>
 </body>
