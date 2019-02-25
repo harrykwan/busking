@@ -282,6 +282,61 @@ h1{
 }
 
 </style>
+
+
+
+<style type="text/css">
+
+.smallh1{
+	font-size: 13px;
+}
+
+.smallprofile{
+	width: 110px;
+	margin: 10px;
+	display: inline-block;
+}
+
+.smallbox1{
+	height: 80px;
+	overflow: hidden;
+}
+
+.smallbox{
+	margin: 0px;
+}
+
+.smallcontainer{
+	padding: 10px;
+}
+
+
+.bigh1{
+	font-size: 35px;
+}
+
+.bigprofile{
+	width: 100%;
+	margin: 10px;
+	display: inline-block;
+}
+
+.bigbox1{
+	height: 100%;
+	overflow: hidden;
+}
+
+.bigbox{
+	margin: 0px;
+}
+
+.bigcontainer{
+	padding: 30px;
+}
+
+</style>
+
+
 </head>
 <body>
 <div id="menuarea" style="">
@@ -296,9 +351,12 @@ h1{
 </div>
 
 <div id="contentarea_0" class="contentarea" style="">
-	<button onclick="resizeprofile(0)">small</button>
-	<button onclick="location.reload()">middle</button>
-	<button onclick="resizeprofile(1)">big</button>
+
+	<div hidden>
+		<button onclick="resizeprofile('small')">small</button>
+		<button onclick="resizeprofile('middle')">middle</button>
+		<button onclick="resizeprofile('big')">big</button>
+	</div>
 
 	<div class="profile">
 	 <div class="mybox mybox1">
@@ -426,8 +484,8 @@ h1{
 					if (this.innerHTML=="Map"){
 						// navigator.geolocation.getCurrentPosition(initlocation);
 						if (mapcheck!='map'){
-							location.reload(true);
-							// location.href.replace = "#map";
+							location.href.replace = "#map";
+							location.reload();
 						}
 					}
 				}
@@ -858,41 +916,87 @@ h1{
 
 	
 	function resizeprofile(x) {
-		if (x==0){
-			var p1 = '13px';
-			var p2 = '110px';
-			var p3 = '80px';
-			var p4 = '10px';
-		} else if (x==1){
-			var p1 = '35px';
-			var p2 = '100%';
-			var p3 = '100%';
-			var p4 = '30px';
+		// if (x==0){
+		// 	var p1 = '13px';
+		// 	var p2 = '110px';
+		// 	var p3 = '80px';
+		// 	var p4 = '10px';
+		// } else if (x==1){
+		// 	var p1 = '35px';
+		// 	var p2 = '100%';
+		// 	var p3 = '100%';
+		// 	var p4 = '30px';
+		// }
+		// var alltitle = document.getElementsByTagName('h1')
+		// for (var j=0; j<alltitle.length; j++){
+		//     alltitle[j].style.fontSize=p1;
+		// }
+		// var allprofile = document.getElementsByClassName('profile');
+		// for (var j=0; j<allprofile.length; j++){
+		//     allprofile[j].style.width=p2;
+		//     allprofile[j].style.margin = "10px";
+		// }
+		// for (var j=0; j<allprofile.length; j++){
+		//     allprofile[j].style.display="inline-block";
+		// }
+		// var allimgdiv = document.getElementsByClassName('mybox1');
+		// for (var j=0; j<allimgdiv.length; j++){
+		// 	allimgdiv[j].style.height = p3;
+		// 	allimgdiv[j].style.overflow = "hidden";
+		// }
+
+		// var allboxdiv = document.getElementsByClassName('mybox')
+		// for (var j=0; j<allboxdiv.length; j++){
+		// 	allboxdiv[j].style.margin = '0px';
+		// }
+
+		// document.getElementById('contentarea_0').style.padding = p4;
+		clearclass('small');
+		clearclass('big');
+		if (x!='middle'){
+			var alltitle = document.getElementsByTagName('h1')
+			for (var j=0; j<alltitle.length; j++){
+			    alltitle[j].classList.add(x+'h1');
+			}
+			var allprofile = document.getElementsByClassName('profile');
+			for (var j=0; j<allprofile.length; j++){
+			    allprofile[j].classList.add(x+'profile');
+			}
+
+			var allimgdiv = document.getElementsByClassName('mybox1');
+			for (var j=0; j<allimgdiv.length; j++){
+				allimgdiv[j].classList.add(x+'box1');
+			}
+
+			var allboxdiv = document.getElementsByClassName('mybox')
+			for (var j=0; j<allboxdiv.length; j++){
+				allboxdiv[j].classList.add(x+'box');
+			}
+
+			document.getElementById('contentarea_0').classList.add(x+'container');
 		}
+		
+	}
+
+	function clearclass(x){
 		var alltitle = document.getElementsByTagName('h1')
 		for (var j=0; j<alltitle.length; j++){
-		    alltitle[j].style.fontSize=p1;
+		    alltitle[j].classList.remove(x+'h1');
 		}
 		var allprofile = document.getElementsByClassName('profile');
 		for (var j=0; j<allprofile.length; j++){
-		    allprofile[j].style.width=p2;
-		    allprofile[j].style.margin = "10px";
+		    allprofile[j].classList.remove(x+'profile');
 		}
-		for (var j=0; j<allprofile.length; j++){
-		    allprofile[j].style.display="inline-block";
-		}
+
 		var allimgdiv = document.getElementsByClassName('mybox1');
 		for (var j=0; j<allimgdiv.length; j++){
-			allimgdiv[j].style.height = p3;
-			allimgdiv[j].style.overflow = "hidden";
+			allimgdiv[j].classList.remove(x+'box1');
 		}
 
 		var allboxdiv = document.getElementsByClassName('mybox')
 		for (var j=0; j<allboxdiv.length; j++){
-			allboxdiv[j].style.margin = '0px';
+			allboxdiv[j].classList.remove(x+'box');
 		}
-
-		document.getElementById('contentarea_0').style.padding = p4;
 	}
 
 
