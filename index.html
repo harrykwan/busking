@@ -334,6 +334,18 @@ h1{
 	padding: 30px;
 }
 
+.detaildiv{
+	padding: 15px;
+}
+
+.bigdetaildiv{
+	display: block;
+}
+
+.smalldetaildiv{
+	display: none;
+}
+
 </style>
 
 
@@ -358,7 +370,7 @@ h1{
 		<button onclick="resizeprofile('big')">big</button>
 	</div>
 
-	<div class="profile">
+	<div class="profile" onclick="profileclick(this)">
 	 <div class="mybox mybox1">
 	 	<img src="demoprofile.jpg">
 	 </div>
@@ -369,10 +381,13 @@ h1{
 		    <a href="#"><i class="fa fa-youtube"></i></a> 
 		    <a href="#"><i class="fa fa-instagram"></i></a> 
 		 </div>
+		 <div class="detaildiv">
+			Bus king Busking busk like year 
+		</div>
 	 </div>
 	</div>
 
-	<div class="profile">
+	<div class="profile" onclick="profileclick(this)">
 	 <div class="mybox mybox1">
 	 	<img src="demoprofile2.jpg">
 	 </div>
@@ -382,6 +397,9 @@ h1{
 		 	<a href="#"><i class="fa fa-facebook"></i></a> 
 		    <a href="#"><i class="fa fa-youtube"></i></a> 
 		    <a href="#"><i class="fa fa-instagram"></i></a> 
+		 </div>
+		 <div class="detaildiv">
+			 Bus king Busking busk like year 
 		 </div>
 	 </div>
 	</div>
@@ -485,7 +503,10 @@ h1{
 						// navigator.geolocation.getCurrentPosition(initlocation);
 						if (mapcheck!='map'){
 							location.href.replace = "#map";
-							location.reload();
+							setTimeout(function(){
+								location.reload();
+							},500)
+							
 						}
 					}
 				}
@@ -914,43 +935,8 @@ h1{
 		}
 	}
 
-	
+	resizeprofile('small')
 	function resizeprofile(x) {
-		// if (x==0){
-		// 	var p1 = '13px';
-		// 	var p2 = '110px';
-		// 	var p3 = '80px';
-		// 	var p4 = '10px';
-		// } else if (x==1){
-		// 	var p1 = '35px';
-		// 	var p2 = '100%';
-		// 	var p3 = '100%';
-		// 	var p4 = '30px';
-		// }
-		// var alltitle = document.getElementsByTagName('h1')
-		// for (var j=0; j<alltitle.length; j++){
-		//     alltitle[j].style.fontSize=p1;
-		// }
-		// var allprofile = document.getElementsByClassName('profile');
-		// for (var j=0; j<allprofile.length; j++){
-		//     allprofile[j].style.width=p2;
-		//     allprofile[j].style.margin = "10px";
-		// }
-		// for (var j=0; j<allprofile.length; j++){
-		//     allprofile[j].style.display="inline-block";
-		// }
-		// var allimgdiv = document.getElementsByClassName('mybox1');
-		// for (var j=0; j<allimgdiv.length; j++){
-		// 	allimgdiv[j].style.height = p3;
-		// 	allimgdiv[j].style.overflow = "hidden";
-		// }
-
-		// var allboxdiv = document.getElementsByClassName('mybox')
-		// for (var j=0; j<allboxdiv.length; j++){
-		// 	allboxdiv[j].style.margin = '0px';
-		// }
-
-		// document.getElementById('contentarea_0').style.padding = p4;
 		clearclass('small');
 		clearclass('big');
 		if (x!='middle'){
@@ -973,8 +959,21 @@ h1{
 				allboxdiv[j].classList.add(x+'box');
 			}
 
+			var alldetaildiv = document.getElementsByClassName('detaildiv')
+			for (var j=0; j<alldetaildiv.length; j++){
+				alldetaildiv[j].classList.add(x+'detaildiv');
+			}
+
 			document.getElementById('contentarea_0').classList.add(x+'container');
 		}
+		
+	}
+
+	function profileclick(x){
+		resizeprofile('big')
+		window.setTimeout(function(){
+			x.scrollIntoView();
+		},500)
 		
 	}
 
@@ -996,6 +995,11 @@ h1{
 		var allboxdiv = document.getElementsByClassName('mybox')
 		for (var j=0; j<allboxdiv.length; j++){
 			allboxdiv[j].classList.remove(x+'box');
+		}
+
+		var alldetaildiv = document.getElementsByClassName('detaildiv')
+		for (var j=0; j<alldetaildiv.length; j++){
+			alldetaildiv[j].classList.remove(x+'detaildiv');
 		}
 	}
 
